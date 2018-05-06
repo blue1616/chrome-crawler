@@ -1,0 +1,14 @@
+version: "2.2"
+services:
+  scraping:
+    image: chrome-crawler
+    build: ./build/
+    volumes:
+      - /dev/shm:/dev/shm
+      - /tmp/.X11-unix/:/tmp/.X11-unix
+      - ./output:/home/chrome/output
+      - ./scripts:/home/chrome/scripts
+    environment:
+      - DISPLAY
+    entrypoint:
+      - docker-entrypoint.sh
