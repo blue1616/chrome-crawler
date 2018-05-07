@@ -5,8 +5,7 @@ echo 'Starting MITMProxy...'
 if [ -f /home/chrome/scripts/mitmproxy-script.py ]; then
   su - chrome -c 'nohup mitmdump -s /home/chrome/scripts/mitmproxy-script.py &'
 else
-  su - chrome -c 'nohup mitmdump > /dev/null 2>&1 &'
-#  su - chrome -c 'nohup mitmproxy -w /home/chrome/output/mitmdump'
+  su - chrome -c 'nohup mitmdump &'
 fi
 
 sleep 3
