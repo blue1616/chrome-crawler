@@ -71,6 +71,10 @@ RUN apt-get update && apt-get install -y task-japanese \
   echo 'export LANG=ja_JP.UTF-8' >> /etc/profile && \
   rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y libnss3-tools \
+  --no-install-recommends && \
+  rm -rf /var/lib/apt/lists/*
+
 # Run script. Switching user in this.
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
@@ -79,3 +83,4 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 #WORKDIR /home/chrome/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
+#CMD ["/bin/bash"]

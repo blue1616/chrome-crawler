@@ -5,10 +5,10 @@ services:
     build: ./build/
     volumes:
       - /dev/shm:/dev/shm
-      - /tmp/.X11-unix/:/tmp/.X11-unix
+#      - /tmp/.X11-unix/:/tmp/.X11-unix # uncomment this if you use by Chrome GUI mode
       - ./output:/home/chrome/output
       - ./scripts:/home/chrome/scripts
-    environment:
-      - DISPLAY
+#    environment: # uncomment this if you use by Chrome GUI mode
+#      - DISPLAY # uncomment this if you use by Chrome GUI mode
     entrypoint:
       - docker-entrypoint.sh
