@@ -2,17 +2,18 @@
 
 ## Description
 Docker Image for crawling Web Sites with Google Chrome & mitmproxy
-This is for GUI Chrome because Headless Chrome cannot use in mitmproxy environment.
+It can use Google Chrome by GUI or headless mode.
 
 ## Requirement
 Docker & docker-compose
 
-Linux Desktop Environment
+Linux Desktop Environment (necessary only for GUI mode)
 
 ## Usage
 Execute below and run chrome and mitmproxy.
-You need to allow authentication by X Window System from localhost.
+When you want to Google Chrome as GUI, you need to allow authentication by X Window System from localhost.
 Execute 'xhost +' or 'xhost local:'(I recommend to execute 'xhost -' or 'xhost -local:' when finished).
+And you have to edit docker-compose.yml and uncomment some lines.
 
 ```sh
 docker-compose build
